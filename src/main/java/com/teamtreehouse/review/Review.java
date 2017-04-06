@@ -1,23 +1,20 @@
 package com.teamtreehouse.review;
 
 
-import com.sun.org.apache.regexp.internal.RE;
+import com.teamtreehouse.core.BaseEntity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Entity;
 
-public class Review {
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private final Long id;
-  private int rating;
-  private String description;
+@Entity
+public class Review extends BaseEntity{
 
   // TODO: max - We are duplicating code here for every single entity. Share it?
   protected Review(){
-    id = null;
+    super();
   }
+
+  private int rating;
+  private String description;
 
   public int getRating() {
     return rating;
