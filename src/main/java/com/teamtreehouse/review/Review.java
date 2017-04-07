@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Review extends BaseEntity{
+public class Review extends BaseEntity {
 
   private int rating;
   private String description;
@@ -19,7 +19,7 @@ public class Review extends BaseEntity{
   private User reviewer;
 
   // TODO: max - We are duplicating code here for every single entity. Share it?
-  protected Review(){
+  protected Review() {
     super();
   }
 

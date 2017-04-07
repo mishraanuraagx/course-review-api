@@ -1,6 +1,7 @@
 package com.teamtreehouse.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.teamtreehouse.core.BaseEntity;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -8,7 +9,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import javax.persistence.Entity;
 
 @Entity
-public class User {
+public class User extends BaseEntity{
   public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
 
   private String firstName;
@@ -23,7 +24,7 @@ public class User {
     super();
   }
 
-  public User(String firstName, String lastName, String username, String password,
+  public User(String username, String firstName, String lastName, String password,
               String[] roles) {
     this();
     this.firstName = firstName;
@@ -67,5 +68,9 @@ public class User {
 
   public void setPassword(String password) {
     this.password = PASSWORD_ENCODER.encode(password);
+  }
+
+  public String getPassword() {
+    return password;
   }
 }

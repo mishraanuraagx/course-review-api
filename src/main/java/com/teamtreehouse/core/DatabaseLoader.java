@@ -82,3 +82,4 @@ public class DatabaseLoader implements ApplicationRunner {
     courses.save(bunchOfCourses);
   }
 }
+
